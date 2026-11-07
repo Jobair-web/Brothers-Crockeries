@@ -35,7 +35,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <>
       {children}
       <WishlistSync />
-      <ToastContainer position="top-right" autoClose={2500} closeOnClick pauseOnHover theme="colored" />
+      <ToastContainer position="top-center" autoClose={2500} closeOnClick pauseOnHover theme="colored" />
     </>
   );
 }
