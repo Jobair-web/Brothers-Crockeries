@@ -110,7 +110,7 @@ export default function WishlistPage() {
                       </div>
 
                       {/* Discount Badge */}
-                      {item.discountPercent > 0 && (
+                      {(item.discountPercent ?? 0) > 0 && (
                         <div className="mt-1">
                           <span className="inline-block rounded-md bg-teal-50 px-2 py-0.5 text-[10px] font-semibold text-teal-700">
                             {item.discountPercent}% OFF

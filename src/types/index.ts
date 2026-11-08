@@ -5,6 +5,7 @@ export interface Category {
   icon?: string;
   image?: string;
   isFeatured?: boolean;
+  order?: number;
   productCount?: number;
 }
 
@@ -132,8 +133,10 @@ export interface WishlistItem {
   _id: string;
   slug: string;
   title: string;
+  description?: string;
   price: number;
   originalPrice?: number;
+  discountPercent?: number;
   image?: string;
   inStock: boolean;
   stock: number;
