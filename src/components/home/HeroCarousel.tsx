@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Every banner image should be 2:1 (e.g. 1600 x 800 px). Put the files in client/public.
 const SLIDES = [
-  { src: "/hero-banner-1.jpg", alt: "New Brothers Crockeries – everything your home needs" },
+  { src: "/hero-banner-1.png", alt: "New Brothers Crockeries – everything your home needs" },
   { src: "/hero-banner-2.jpg", alt: "Modern appliances and crockeries for your home" },
-  { src: "/hero-banner-3.jpg", alt: "New Brothers Crockeries shop card with contact numbers" },
-  { src: "/hero-banner-4.jpg", alt: "Banner 4" }, // alt text ta nijer moto likho
-  { src: "/hero-banner-5.jpg", alt: "Banner 5" },
-  { src: "/hero-banner-6.jpg", alt: "Banner 6" },
+  { src: "/hero-banner-3.png", alt: "New Brothers Crockeries shop card with contact numbers" },
+  { src: "/hero-banner-4.png", alt: "Banner 4" }, // alt text ta nijer moto likho
+  { src: "/hero-banner-5.png", alt: "Banner 5" },
+  { src: "/hero-banner-6.png", alt: "Banner 6" },
 ];
 const N = SLIDES.length;
 // The first slide is repeated at the end so the last -> first move is also right to left.
