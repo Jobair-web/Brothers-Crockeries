@@ -8,7 +8,7 @@ import { formatPrice, PLACEHOLDER_IMAGE } from "@/lib/format";
 import { useDebounce } from "@/hooks/useDebounce";
 import type { Product } from "@/types";
 
-export default function SearchBar({ onNavigate }: { onNavigate?: () => void }) {
+export default function SearchBar({ onNavigate, inDrawer = false }: { onNavigate?: () => void; inDrawer?: boolean }) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -31,7 +31,7 @@ export default function SearchBar({ onNavigate }: { onNavigate?: () => void }) {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
-  // true only for the search bar the user is actually typing in (the navbar renders two copies)
+  // true only for the search bar the user is actually typing in (the navbar renders several copies)
   const typingRef = useRef(false);
   const debounced = useDebounce(query.trim(), 400);
 
@@ -97,7 +97,7 @@ export default function SearchBar({ onNavigate }: { onNavigate?: () => void }) {
 
   return (
     <div ref={wrapRef} className="relative w-full">
-      <form onSubmit={submit} role="search" className="flex h-10 overflow-hidden rounded-lg bg-white text-base-content ring-primary/60 focus-within:ring-2">
+      <form onSubmit={submit} role="search" className={`flex h-10 overflow-hidden rounded-lg bg-white text-base-content ring-primary/60 focus-within:ring-2 ${inDrawer ? "border border-base-300" : ""}`}>
         <input
           value={query}
           onChange={(e) => {
@@ -119,7 +119,7 @@ export default function SearchBar({ onNavigate }: { onNavigate?: () => void }) {
       </form>
 
       {showPanel && (
-        <div className="absolute left-0 right-0 top-12 z-50 overflow-hidden rounded-box bg-base-100 text-base-content shadow-2xl max-lg:fixed max-lg:inset-x-3 max-lg:top-[68px]">
+        <div className={`absolute left-0 right-0 top-12 z-50 overflow-hidden rounded-box bg-base-100 text-base-content shadow-2xl ${inDrawer ? "border border-base-300" : "max-lg:fixed max-lg:inset-x-3 max-lg:top-[68px]"}`}>
           {results.length === 0 && !loading ? (
             <p className="px-4 py-5 text-sm text-base-content/60">No products match “{debounced}”. Try a shorter word.</p>
           ) : (
