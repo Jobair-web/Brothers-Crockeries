@@ -11,6 +11,7 @@ const SLIDES = [
   { src: "/hero-banner-4.png", alt: "Banner 4" }, // alt text ta nijer moto likho
   { src: "/hero-banner-5.png", alt: "Banner 5" },
   { src: "/hero-banner-6.png", alt: "Banner 6" },
+  { src: "/hero-banner-7.png", alt: "Banner 7" },
 ];
 const N = SLIDES.length;
 // The first slide is repeated at the end so the last -> first move is also right to left.
